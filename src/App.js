@@ -10,6 +10,7 @@ const {SystemProgram} = web3;
 let key;
 
 if(process.env.REACT_APP_key){
+  console.log(process.env.REACT_APP_key)
   const data = JSON.parse(process.env.REACT_APP_key)
   key = Object.values(data.secretKey)
 }
