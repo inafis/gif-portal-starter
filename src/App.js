@@ -11,9 +11,9 @@ const {SystemProgram, Keypair} = web3;
 
 let key;
 
-if(process.env.key){
-  const secretKey = process.env.key
-  key = Object.values(secretKey)
+if(process.env.REACT_APP_key){
+  const data = JSON.parse(process.env.REACT_APP_key)
+  key = Object.values(data.secretKey)
 }else{
   key = Object.values(kp._keypair.secretKey)
 }
