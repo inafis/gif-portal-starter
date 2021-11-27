@@ -9,7 +9,15 @@ import kp from './keypair.json'
 
 const {SystemProgram, Keypair} = web3;
 
-const arr = Object.values(kp._keypair.secretKey)
+let key;
+
+if(process.env.key){
+  const secretKey = process.env.key
+  key = Object.values(secretKey)
+}else{
+  key = Object.values(kp._keypair.secretKey)
+}
+const arr = key;
 const secret = new Uint8Array(arr)
 const baseAccount = web3.Keypair.fromSecretKey(secret)
 
