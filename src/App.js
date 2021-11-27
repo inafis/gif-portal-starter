@@ -5,7 +5,7 @@ import {Program, Provider, web3} from '@project-serum/anchor';
 
 import idl from './idl.json';
 
-const {SystemProgram, Keypair} = web3;
+const {SystemProgram} = web3;
 
 let key;
 
